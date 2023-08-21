@@ -1,19 +1,10 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-      map<int, int> m;
-
-    for(int i = 0; i < nums.size(); i++) {
-        m[nums[i]]++;
-    }
-
-    for(auto const & [key, value]: m) {
-        if(value == 1) {
-            return key;
+     int xorr=0;
+        for(int i=0;i<nums.size();i++){
+            xorr=xorr^nums[i];
         }
-    }
-
-    return -1;
-   
+        return xorr;
     }
 };
